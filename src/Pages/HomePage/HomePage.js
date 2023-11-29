@@ -1,5 +1,5 @@
 import bg from "../../assets/earth.png";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/gits.png";
 import "./HomePage.css";
 
 function Logo() {
@@ -31,6 +31,9 @@ function HomePage() {
 				<div className="app__home-overlay_header">
 					<Logo />
 					<Nav />
+					<a className="like" href="https://github.com/sgc93/GITs">
+						Like
+					</a>
 				</div>
 				<div className="app__home-overlay_body">body</div>
 				<div className="app__home-overlay_footer">footer</div>
