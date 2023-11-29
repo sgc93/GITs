@@ -21,6 +21,18 @@ function Nav() {
 	);
 }
 
+function Header() {
+	return (
+		<div className="app__home-overlay_header">
+			<Logo />
+			<Nav />
+			<a className="like" href="https://github.com/sgc93/GITs">
+				Like
+			</a>
+		</div>
+	);
+}
+
 function HomePage() {
 	return (
 		<div className="app__home">
@@ -28,13 +40,7 @@ function HomePage() {
 				<img src={bg} alt="gitEarth" />
 			</div>
 			<div className="app__home-overlay">
-				<div className="app__home-overlay_header">
-					<Logo />
-					<Nav />
-					<a className="like" href="https://github.com/sgc93/GITs">
-						Like
-					</a>
-				</div>
+				<Header />
 				<div className="app__home-overlay_body">body</div>
 				<div className="app__home-overlay_footer">footer</div>
 			</div>
