@@ -16,6 +16,8 @@
 .app__home-bg img {
 	width: 100%;
 	height: 100%;
+
+	opacity: 0.4;
 }
 
 .app__home-overlay {
@@ -29,8 +31,11 @@
 	justify-content: space-between;
 }
 
+/* header */
+
 .app__home-overlay_header {
 	width: 100%;
+	height: 50px;
 	padding: 2rem;
 
 	display: flex;
@@ -89,4 +94,42 @@
 .nav a:hover::before,
 .like:hover::before {
 	transform: scale(1);
+}
+
+/* home body */
+
+.app__home-overlay_body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin: 0 14rem;
+}
+
+.body__content {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.p__large {
+	font-size: 4rem;
+}
+
+.p__small {
+	font-size: 1.2rem;
+}
+
+.P__medium {
+	color: var(--color-text-blue);
+	font-size: 1.8rem;
+}
+.body__img {
+	width: 760px;
+	height: max-content;
+}
+
+.body__img img {
+	width: 100%;
+	height: 100%;
 }
