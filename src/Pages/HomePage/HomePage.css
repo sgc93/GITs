@@ -133,3 +133,50 @@
 	width: 100%;
 	height: 100%;
 }
+
+/* search bar */
+
+.app__searchbar {
+	width: 400px;
+	background-color: var(--color-bg-black);
+
+	display: flex;
+	justify-content: space-between;
+	padding: 0.3rem;
+	border-radius: 0.7rem;
+}
+
+.app__searchbar input {
+	background: none;
+	border: none;
+	padding-left: 1rem;
+	color: var(--color-text);
+	font-size: 1.23rem;
+	width: 80%;
+	transition: 0.3s;
+}
+
+.app__searchbar input:focus {
+	outline: none;
+}
+
+.app__searchbar input::placeholder {
+	color: rgb(252, 251, 249);
+}
+
+.app__searchbar button {
+	background: none;
+	border: none;
+	cursor: pointer;
+
+	transition: 0.3s;
+}
+
+.app__searchbar button:hover {
+	transform: translateY(-2px);
+}
+
+.app__searchbar button img {
+	width: 1.6rem;
+	margin: 0.2rem;
+}
