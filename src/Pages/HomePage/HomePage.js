@@ -1,6 +1,7 @@
 import bg from "../../assets/earth.png";
 import logo from "../../assets/gits.png";
 import moon from "../../assets/moon.png";
+import search from "../../assets/search.svg";
 import "./HomePage.css";
 
 function Logo() {
@@ -34,6 +35,35 @@ function Header() {
 	);
 }
 
+function SearchBar() {
+	return (
+		<div className="app__searchbar">
+			<input type="text" placeholder="Search or jump to ..." />
+			<button type="button">
+				<img src={search} alt="search" />
+			</button>
+		</div>
+	);
+}
+
+function Body() {
+	return (
+		<div className="app__home-overlay_body">
+			<div className="body__content">
+				<p className="p__small">Hi GitHubers,</p>
+				<h1 className="p__large">Explore GitHub In Summarized Way!</h1>
+				<p className="P__medium">
+					Search and explore users, repos and organizations
+				</p>
+				<SearchBar />
+			</div>
+			<div className="body__img">
+				<img src={moon} alt="githubers" />
+			</div>
+		</div>
+	);
+}
+
 function HomePage() {
 	return (
 		<div className="app__home">
@@ -42,18 +72,7 @@ function HomePage() {
 			</div>
 			<div className="app__home-overlay">
 				<Header />
-				<div className="app__home-overlay_body">
-					<div className="body__content">
-						<p className="p__small">Hi GitHubers,</p>
-						<h1 className="p__large">Explore GitHub In Summarized Way!</h1>
-						<p className="P__medium">
-							Search and explore users, repos and organizations
-						</p>
-					</div>
-					<div className="body__img">
-						<img src={moon} alt="githubers" />
-					</div>
-				</div>
+				<Body />
 				<div className="app__home-overlay_footer">footer</div>
 			</div>
 		</div>
