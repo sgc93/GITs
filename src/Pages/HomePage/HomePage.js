@@ -16,10 +16,10 @@ function Logo() {
 function Nav() {
 	return (
 		<div className="nav">
-			<a href="topUsers">Top Users</a>
-			<a href="topRepos">Top Repositories</a>
-			<a href="topOrgs">Top Organizations</a>
-			<a href="Contact">Contact</a>
+			<a href="topUsers">_topUsers</a>
+			<a href="topRepos">_topRepositories</a>
+			<a href="topOrgs">_topOrganizations</a>
+			<a href="Contact"> Contact()</a>
 		</div>
 	);
 }
@@ -30,7 +30,7 @@ function Header() {
 			<Logo />
 			<Nav />
 			<a className="like" href="https://github.com/sgc93/GITs">
-				Like
+				Like()
 			</a>
 		</div>
 	);
@@ -54,7 +54,7 @@ function Body() {
 				<p className="p__small">Hi GitHubers,</p>
 				<h1 className="p__large">Explore GitHub In Summarized Way!</h1>
 				<p className="P__medium">
-					Search and explore users, repos and organizations
+					{"// Search and explore users, repositories and organizations"}
 				</p>
 				<SearchBar />
 			</div>
@@ -69,7 +69,7 @@ function Footer() {
 	return (
 		<div className="app__home-overlay_footer">
 			<div className="footer-address">
-				<p className="p__small">_find developer</p>
+				<p className="p__small">Find (developer, designer)</p>
 				<div className="links">
 					<a href="#dribble">
 						<FaDribbble />
