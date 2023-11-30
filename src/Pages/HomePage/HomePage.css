@@ -46,11 +46,11 @@
 }
 
 .logo {
-	width: 40px;
+	margin-top: 1rem;
+	width: 30px;
 }
 
 .logo img {
-	height: 100%;
 	width: 100%;
 }
 
