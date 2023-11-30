@@ -1,3 +1,4 @@
+import { FaDribbble, FaFigma, FaGithub } from "react-icons/fa";
 import bg from "../../assets/earth.png";
 import logo from "../../assets/gits.png";
 import moon from "../../assets/moon.png";
@@ -64,6 +65,30 @@ function Body() {
 	);
 }
 
+function Footer() {
+	return (
+		<div className="app__home-overlay_footer">
+			<div className="footer-address">
+				<p className="p__small">_find developer</p>
+				<div className="links">
+					<a href="#dribble">
+						<FaDribbble />
+					</a>
+					<a href="#dribble">
+						<FaFigma />
+					</a>
+				</div>
+			</div>
+			<div className="footer-git">
+				<p className="p__small">@sgc93</p>
+				<a href="#github">
+					<FaGithub />
+				</a>
+			</div>
+		</div>
+	);
+}
+
 function HomePage() {
 	return (
 		<div className="app__home">
@@ -73,7 +98,7 @@ function HomePage() {
 			<div className="app__home-overlay">
 				<Header />
 				<Body />
-				<div className="app__home-overlay_footer">footer</div>
+				<Footer />
 			</div>
 		</div>
 	);
