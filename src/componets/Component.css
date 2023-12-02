@@ -1,6 +1,7 @@
 /* search bar */
 
 .app__searchbar {
+	position: absolute;
 	width: 400px;
 	background-color: var(--color-bg-black);
 
@@ -8,6 +9,19 @@
 	justify-content: space-between;
 	padding: 0.3rem;
 	border-radius: 0.7rem;
+
+	z-index: 999;
+}
+
+.app__searchbar-focused {
+	top: 115vh;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.app__searchbar-normal {
+	bottom: 26vh;
+	left: 13vw;
 }
 
 .app__searchbar input {
@@ -21,6 +35,7 @@
 }
 
 .app__searchbar input:focus {
+	bottom: -110vh;
 	outline: none;
 }
 
@@ -48,6 +63,9 @@
 /* Footer */
 
 .app__home-overlay_footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
 	height: 40px;
 	width: 100%;
 	border-top: 1px solid var(--color-line1);
