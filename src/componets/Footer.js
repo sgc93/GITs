@@ -1,4 +1,5 @@
 import { FaDribbble, FaFigma, FaGithub } from "react-icons/fa";
+import "./Component.css";
 
 function Footer() {
 	return (

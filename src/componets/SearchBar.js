@@ -1,23 +1,25 @@
-import { useEffect } from "react";
+import { useRef } from "react";
 import search from "../assets/search.svg";
-const id = "109880887";
+import "./Component.css";
 
 function SearchBar() {
-	useEffect(function () {
-		async function handleSearch() {
-			try {
-				const response = await fetch(`https://api.github.com/user/${id}`);
-				const data = await response.json();
-				console.log(data);
-			} catch (error) {
-				console.error("Error fetching user data:", error);
-			}
-		}
-		handleSearch();
-	}, []);
+	const inputRef = useRef(null);
+
+	const handleInputFocus = () => {
+		window.scrollTo({
+			top: 1080,
+			behavior: "smooth",
+		});
+	};
+
 	return (
 		<div className="app__searchbar">
-			<input type="text" placeholder="Search or jump to ..." />
+			<input
+				type="text"
+				placeholder="Search or jump to ..."
+				onFocus={handleInputFocus}
+				ref={inputRef}
+			/>
 			<button type="button">
 				<img src={search} alt="search" />
 			</button>

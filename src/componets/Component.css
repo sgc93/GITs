@@ -1,0 +1,104 @@
+/* search bar */
+
+.app__searchbar {
+	width: 400px;
+	background-color: var(--color-bg-black);
+
+	display: flex;
+	justify-content: space-between;
+	padding: 0.3rem;
+	border-radius: 0.7rem;
+}
+
+.app__searchbar input {
+	background: none;
+	border: none;
+	padding-left: 1rem;
+	color: var(--color-text);
+	font-size: 1.23rem;
+	width: 80%;
+	transition: 0.3s;
+}
+
+.app__searchbar input:focus {
+	outline: none;
+}
+
+.app__searchbar input::placeholder {
+	color: rgb(252, 251, 249);
+}
+
+.app__searchbar button {
+	background: none;
+	border: none;
+	cursor: pointer;
+
+	transition: 0.3s;
+}
+
+.app__searchbar button:hover {
+	transform: translateY(-2px);
+}
+
+.app__searchbar button img {
+	width: 1.6rem;
+	margin: 0.2rem;
+}
+
+/* Footer */
+
+.app__home-overlay_footer {
+	height: 40px;
+	width: 100%;
+	border-top: 1px solid var(--color-line1);
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.footer-address,
+.footer-git {
+	color: var(--color-light1);
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+
+	height: 100%;
+}
+
+.footer-address {
+	padding-left: 1.3rem;
+
+	border-right: 1px solid var(--color-line1);
+}
+
+.footer-git {
+	padding: 0 1.3rem;
+	border-left: 1px solid var(--color-line1);
+}
+
+.links {
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+.links a {
+	padding: 0 1rem;
+	border-left: 1px solid var(--color-line1);
+}
+
+.footer-git a,
+.links a {
+	text-decoration: none;
+	color: var(--color-light1);
+	font-size: 1.2rem;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.footer-git a:hover,
+.links a:hover {
+	transform-origin: translateY(-2px);
+	color: var(--color-light2);
+}
