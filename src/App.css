@@ -1,7 +1,12 @@
+body {
+	background-color: var(--color-bg);
+}
+
 /* colors */
 :root {
 	--color-text: white;
 	--color-text-blue: #6f40c9;
+	--color-text-comment: #5c536e;
 	--color-orange: #fea55f;
 	--color-bg: #011627;
 	--color-bg-black: #000305;
