@@ -21,17 +21,33 @@
 
 .app__search-overlay {
 	position: absolute;
+	top: 90px;
 	width: 100%;
 	height: 100%;
 
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: flex-start;
 	gap: 3rem;
 
 	padding: 3rem;
 }
 
+.app__search-overlay p {
+	font-size: 1.3rem;
+	color: white;
+}
+
+.app__search-overlay p span {
+	color: blueviolet;
+	font-size: 1.5rem;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
 .app__search-results {
-	margin-top: 7rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 5rem;
 }
