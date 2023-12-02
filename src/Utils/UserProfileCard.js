@@ -2,36 +2,38 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 import { MdOutlineStarBorder } from "react-icons/md";
 import { RiGitRepositoryLine } from "react-icons/ri";
 
-import avatar from "../assets/flying.png";
 import "./Utils.css";
+import { useEffect } from "react";
 
-const UserProfileCard = () => {
+const UserProfileCard = ({ user }) => {
 	return (
-		<div className="app__card-user">
-			<div className="profile__avatar">
-				<img src={avatar} alt="avatar" />
-			</div>
-			<div className="profile__name">
-				<p className="name">CodeHub</p>
-				<p className="bio">Coding While Living</p>
-			</div>
-			<div className="profile__data">
-				<div className="data">
-					<MdOutlineStarBorder className="icon" />
-					<p>453 stars</p>
+		user && (
+			<div className="app__card-user">
+				<div className="profile__avatar">
+					<img src={user.avatar_url} alt="avatar" />
 				</div>
-				<div className="data">
-					<a href="#github">
-						<FaExternalLinkAlt className="icon" />
-					</a>
+				<div className="profile__name">
+					<p className="name">{user.login}</p>
+					<p className="bio">Coding While Living</p>
 				</div>
-				<div className="data">
-					<RiGitRepositoryLine className="icon" />
-					<p>43 repositories</p>
+				<div className="profile__data">
+					<div className="data">
+						<MdOutlineStarBorder className="icon" />
+						<p>453 stars</p>
+					</div>
+					<div className="data">
+						<a href={user.url}>
+							<FaExternalLinkAlt className="icon" />
+						</a>
+					</div>
+					<div className="data">
+						<RiGitRepositoryLine className="icon" />
+						<p>43 repositories</p>
+					</div>
 				</div>
+				<button>See Details</button>
 			</div>
-			<button>See Details</button>
-		</div>
+		)
 	);
 };
 
