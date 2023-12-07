@@ -5,16 +5,13 @@ import { SlUserFollowing } from "react-icons/sl";
 import { useEffect, useState } from "react";
 import "./Utils.css";
 
-const UserProfileCard = ({ user }) => {
+const UserProfileCard = ({ user, onSelect, type }) => {
+	console.log(onSelect + "  " + type);
 	const [userData, setUserData] = useState("");
 	useEffect(
 		function () {
 			async function fetchUserData() {
-				const response = await fetch(user.url, {
-					headers: {
-						Authorization: `Bearer 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`,
-					},
-				});
+				const response = await fetch(user.url);
 				const data = await response.json();
 				console.log(data);
 				setUserData(data);
@@ -52,7 +49,13 @@ const UserProfileCard = ({ user }) => {
 						<p>{userData.public_repos}</p>
 					</div>
 				</div>
-				<button>See Details</button>
+				<button
+					onClick={() => {
+						onSelect(userData, type);
+					}}
+				>
+					See Details
+				</button>
 			</div>
 		)
 	);
