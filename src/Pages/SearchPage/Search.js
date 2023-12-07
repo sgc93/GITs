@@ -7,9 +7,11 @@ function Search({ query }) {
 	const [users, setUsers] = useState([]);
 	useEffect(
 		function () {
+			const controller = new AbortController();
 			async function fetchUsers() {
 				const response = await fetch(
-					`https://api.github.com/search/users?q=${query}`
+					`https://api.github.com/search/users?q=${query}`,
+					{ signal: controller.signal }
 				);
 				const data = await response.json();
 				setUsers(data.items);
@@ -17,6 +19,9 @@ function Search({ query }) {
 			}
 
 			fetchUsers();
+			return () => {
+				controller.abort();
+			};
 		},
 		[query]
 	);
