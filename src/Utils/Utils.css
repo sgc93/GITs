@@ -7,6 +7,8 @@
 	align-items: center;
 	gap: 1rem;
 
+	padding: 0rem 1rem;
+
 	background: rgba(120, 63, 198, 0.3);
 	border: 3px solid rgba(120, 63, 198);
 	border-radius: 23px;
@@ -43,16 +45,22 @@
 }
 
 .profile__name {
+	height: 30%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	overflow: auto;
 }
 
 .profile__name .name {
+	height: 30%;
 	font-size: 1.4rem;
 	font-weight: 600;
+	overflow-y: hidden;
 }
 .profile__name .bio {
+	text-align: center;
+	height: 46%;
 	font-size: 1rem;
 	color: var(--color-light2);
 }
@@ -69,6 +77,10 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
+}
+
+.data p {
+	font-size: 1rem;
 }
 
 .data a {
