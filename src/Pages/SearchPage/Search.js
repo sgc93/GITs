@@ -9,13 +9,16 @@ function Search({ query }) {
 		function () {
 			const controller = new AbortController();
 			async function fetchUsers() {
-				const response = await fetch(
-					`https://api.github.com/search/users?q=${query}`,
-					{ signal: controller.signal }
-				);
-				const data = await response.json();
-				setUsers(data.items);
-				console.log(data);
+				try {
+					const response = await fetch(
+						`https://api.github.com/search/users?q=${query}`,
+						{ signal: controller.signal }
+					);
+					const data = await response.json();
+					setUsers(data.items);
+				} catch (error) {
+					console.log(error);
+				}
 			}
 
 			fetchUsers();
