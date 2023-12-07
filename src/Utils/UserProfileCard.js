@@ -1,11 +1,26 @@
 import { FaExternalLinkAlt } from "react-icons/fa";
-import { MdOutlineStarBorder } from "react-icons/md";
 import { RiGitRepositoryLine } from "react-icons/ri";
+import { SlUserFollowing } from "react-icons/sl";
 
+import { useEffect, useState } from "react";
 import "./Utils.css";
-import { useEffect } from "react";
 
 const UserProfileCard = ({ user }) => {
+	const [userData, setUserData] = useState("");
+	useEffect(
+		function () {
+			async function fetchUserData() {
+				const response = await fetch(user.url);
+				const data = await response.json();
+				console.log(data);
+				setUserData(data);
+			}
+			if (user) {
+				fetchUserData();
+			}
+		},
+		[user]
+	);
 	return (
 		user && (
 			<div className="app__card-user">
@@ -14,21 +29,23 @@ const UserProfileCard = ({ user }) => {
 				</div>
 				<div className="profile__name">
 					<p className="name">{user.login}</p>
-					<p className="bio">Coding While Living</p>
+					<p className="bio">
+						{userData.bio ? userData.bio : "user has no bio yet!"}
+					</p>
 				</div>
 				<div className="profile__data">
 					<div className="data">
-						<MdOutlineStarBorder className="icon" />
-						<p>453 stars</p>
+						<SlUserFollowing className="icon" />
+						<p>{userData.followers}</p>
 					</div>
 					<div className="data">
-						<a href={user.url}>
+						<a href={userData.html_url}>
 							<FaExternalLinkAlt className="icon" />
 						</a>
 					</div>
 					<div className="data">
 						<RiGitRepositoryLine className="icon" />
-						<p>43 repositories</p>
+						<p>{userData.public_repos} repos</p>
 					</div>
 				</div>
 				<button>See Details</button>
