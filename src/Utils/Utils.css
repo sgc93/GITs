@@ -45,7 +45,7 @@
 }
 
 .profile__name {
-	height: 30%;
+	max-height: 30%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -53,7 +53,6 @@
 }
 
 .profile__name .name {
-	height: 30%;
 	font-size: 1.4rem;
 	font-weight: 600;
 	overflow-y: hidden;
@@ -65,6 +64,11 @@
 	color: var(--color-light2);
 }
 
+.profile__name .no__bio {
+	text-align: center;
+	font-size: 1rem;
+	color: #ff8585;
+}
 .profile__data {
 	margin-top: 1rem;
 	width: 90%;
