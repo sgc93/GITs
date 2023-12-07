@@ -10,7 +10,11 @@ const UserProfileCard = ({ user }) => {
 	useEffect(
 		function () {
 			async function fetchUserData() {
-				const response = await fetch(user.url);
+				const response = await fetch(user.url, {
+					headers: {
+						Authorization: `Bearer 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`,
+					},
+				});
 				const data = await response.json();
 				console.log(data);
 				setUserData(data);
@@ -29,8 +33,8 @@ const UserProfileCard = ({ user }) => {
 				</div>
 				<div className="profile__name">
 					<p className="name">{user.login}</p>
-					<p className="bio">
-						{userData.bio ? userData.bio : "user has no bio yet!"}
+					<p className={userData.bio ? "bio" : "no__bio"}>
+						{userData.bio ? userData.bio : '"user has no bio yet!",GITs'}
 					</p>
 				</div>
 				<div className="profile__data">
@@ -45,7 +49,7 @@ const UserProfileCard = ({ user }) => {
 					</div>
 					<div className="data">
 						<RiGitRepositoryLine className="icon" />
-						<p>{userData.public_repos} repos</p>
+						<p>{userData.public_repos}</p>
 					</div>
 				</div>
 				<button>See Details</button>
