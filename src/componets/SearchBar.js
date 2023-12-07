@@ -1,9 +1,23 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import search from "../assets/search.svg";
 import "./Component.css";
 
 function SearchBar({ query, setQuery }) {
 	const inputRef = useRef(null);
+
+	useEffect(function () {
+		function onKeydown(e) {
+			if (document.activeElement === inputRef.input) return;
+			if (e.code === "Enter") {
+				inputRef.current.focus();
+				setQuery("");
+			}
+		}
+
+		document.addEventListener("keydown", onKeydown);
+
+		return document.addEventListener("keydown", onKeydown);
+	}, []);
 
 	if (query) {
 		window.scrollTo({
