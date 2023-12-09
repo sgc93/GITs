@@ -48,12 +48,12 @@
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 1rem;
-	width: 200px;
+	width: 250px;
 }
 
 .app__detail-data_user .avatar {
-	width: 200px;
-	height: 200px;
+	width: 250px;
+	height: 250px;
 
 	border: 1px solid var(--color-light1);
 	border-radius: 50%;
@@ -71,6 +71,13 @@
 
 .login {
 	color: var(--color-light1);
+}
+
+.location,
+.follow {
+	display: flex;
+	align-items: center;
+	gap: 0.2rem;
 }
 
 .app__detail-data_user a {
@@ -96,8 +103,19 @@
 .app__detail-data_attributes {
 	align-self: flex-start;
 	display: flex;
+
+	padding: 2rem 4rem;
 }
 
 .attributes__link {
 	display: flex;
+	gap: 3rem;
+	font-size: 1.3rem;
+	color: var(--color-light2);
+}
+
+.link {
+	display: flex;
+	align-items: center;
+	gap: 0.7rem;
 }
