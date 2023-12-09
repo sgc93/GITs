@@ -73,6 +73,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	backdrop-filter: blur(10px);
 }
 .footer-address,
 .footer-git {
