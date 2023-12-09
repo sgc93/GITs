@@ -25,7 +25,11 @@ function App() {
 			{query && !selected && <Search query={query} onSelect={onSelect} />}
 
 			{selected && (
-				<UserDetail selected={selected} selectedType={selectedType} />
+				<UserDetail
+					selected={selected}
+					onSelect={onSelect}
+					selectedType={selectedType}
+				/>
 			)}
 			<Footer />
 		</>

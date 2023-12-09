@@ -1,9 +1,9 @@
 import "./Detail.css";
-function UserDetail({ selected, selectedType }) {
+function UserDetail({ selected, onSelect, selectedType }) {
 	return (
 		<div className="app__detail">
 			<div className="app__detail-back">
-				<button>Back</button>
+				<button onClick={() => onSelect("", "")}>Back</button>
 			</div>
 			<div className="app__detail-data">
 				<div className="app__detail-data_user">
