@@ -16,6 +16,8 @@
 	justify-content: center;
 }
 
+/* back btn */
+
 .app__detail-back button {
 	background-color: rgba(254, 254, 254, 0.24);
 	border: 1px solid white;
@@ -29,4 +31,73 @@
 .app__detail-back button:hover {
 	cursor: pointer;
 	color: white;
+}
+
+/* user data */
+
+.app__detail-data {
+	color: var(--color-text);
+	padding: 1.5rem 5rem;
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.app__detail-data_user {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1rem;
+	width: 200px;
+}
+
+.app__detail-data_user .avatar {
+	width: 200px;
+	height: 200px;
+
+	border: 1px solid var(--color-light1);
+	border-radius: 50%;
+}
+
+.avatar img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+.name {
+	font-size: 1.5rem;
+}
+
+.login {
+	color: var(--color-light1);
+}
+
+.app__detail-data_user a {
+	text-decoration: none;
+	color: var(--color-light2);
+	width: 100%;
+
+	padding: 0.3rem;
+	background-color: var(--color-light1);
+	border: 1px solid var(--color-light2);
+	border-radius: 10px;
+	text-align: center;
+	transition: 0.2s;
+}
+
+.app__detail-data_user a:hover {
+	border: 1px solid white;
+	color: white;
+}
+
+/* attributes */
+
+.app__detail-data_attributes {
+	align-self: flex-start;
+	display: flex;
+}
+
+.attributes__link {
+	display: flex;
 }
