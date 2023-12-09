@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import search from "../assets/search.svg";
 import "./Component.css";
 
-function SearchBar({ query, setQuery }) {
+function SearchBar({ query, setQuery, selected }) {
 	const inputRef = useRef(null);
 
 	useEffect(function () {
@@ -29,7 +29,7 @@ function SearchBar({ query, setQuery }) {
 	return (
 		<div
 			className={
-				query
+				query && !selected
 					? "app__searchbar-focused app__searchbar"
 					: "app__searchbar app__searchbar-normal"
 			}
