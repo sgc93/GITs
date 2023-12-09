@@ -1,0 +1,32 @@
+.app__detail {
+	height: 100vh;
+	width: 100vw;
+
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.app__detail-back {
+	align-self: flex-end;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.app__detail-back button {
+	background-color: rgba(254, 254, 254, 0.24);
+	border: 1px solid white;
+	border-radius: 8px;
+	padding: 0.5rem 2rem;
+	color: rgba(255, 255, 255, 0.622);
+	font-weight: 500;
+	font-size: 1rem;
+}
+
+.app__detail-back button:hover {
+	cursor: pointer;
+	color: white;
+}
