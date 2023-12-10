@@ -1,13 +1,26 @@
 import { FaRegStar } from "react-icons/fa";
 import { GoPeople } from "react-icons/go";
-import { IoLocationOutline } from "react-icons/io5";
+import { IoBookOutline, IoLocationOutline } from "react-icons/io5";
 import { RiGitRepositoryLine } from "react-icons/ri";
 import { SlUserFollowing } from "react-icons/sl";
 
+import Followers from "./Attributes/Followers";
+import Following from "./Attributes/Following";
+import Overview from "./Attributes/Overview";
+import Repos from "./Attributes/Repos";
+import Stars from "./Attributes/Stars";
+
+import { useState } from "react";
 import "./Detail.css";
 
 function UserDetail({ selected, onSelect, selectedType }) {
+	const [attIndex, setAttIndex] = useState(0);
 	console.log(selected);
+
+	function onAttSelection(attI) {
+		setAttIndex(attI);
+	}
+
 	return (
 		<div className="app__detail">
 			<div className="app__detail-back">
@@ -41,26 +54,66 @@ function UserDetail({ selected, onSelect, selectedType }) {
 				</div>
 				<div className="app__detail-data_attributes">
 					<div className="attributes__link">
-						<div className="repos link">
+						<div
+							className={
+								attIndex === 0 ? "overview link selected" : "overview link"
+							}
+							onClick={() => onAttSelection(0)}
+						>
+							<IoBookOutline className="icon" />
+							<p>overview</p>
+						</div>
+						<div
+							className={attIndex === 1 ? "repos link selected" : "repos link"}
+							onClick={() => onAttSelection(1)}
+						>
 							<RiGitRepositoryLine className="icon" />
 							<p>repositories</p>
 							<p>{selected.public_repos}</p>
 						</div>
-						<div className="followers link">
+						<div
+							className={
+								attIndex === 2 ? "followers link selected" : "followers link"
+							}
+							onClick={() => onAttSelection(2)}
+						>
 							<GoPeople />
 							<p>followers</p>
 							<p>{selected.followers}</p>
 						</div>
-						<div className="following link">
+						<div
+							className={
+								attIndex === 3 ? "following link selected" : "following link"
+							}
+							onClick={() => onAttSelection(3)}
+						>
 							<SlUserFollowing className="icon" />
 							<p>following</p>
 							<p>{selected.following}</p>
 						</div>
-						<div className="starred link">
+						<div
+							className={attIndex === 4 ? "stars link selected" : "stars link"}
+							onClick={() => onAttSelection(4)}
+						>
 							<FaRegStar className="icon" />
 							<p>starred</p>
 							<p>{selected.repositories}</p>
 						</div>
+					</div>
+					<div className="attribute__data">
+						{attIndex === 0 ? (
+							<Overview user={selected} />
+						) : attIndex === 1 ? (
+							<Repos user={selected} />
+						) : attIndex === 2 ? (
+							<Followers user={selected} />
+						) : attIndex === 3 ? (
+							<Following user={selected} />
+						) : attIndex === 4 ? (
+							<Stars user={selected} />
+						) : (
+							""
+						)}
 					</div>
 				</div>
 			</div>
