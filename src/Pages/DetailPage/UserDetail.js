@@ -21,7 +21,9 @@ function UserDetail({ selected, onSelect, selectedType }) {
 					<p className="name">{selected.name}</p>
 					<p className="login">{selected.login}</p>
 					<p className="bio">{selected.bio}</p>
-					<a href={selected.html_url}>visit</a>
+					<a className="url" href={selected.html_url}>
+						visit
+					</a>
 					<div className="follow">
 						<GoPeople />
 						<p>
@@ -32,23 +34,27 @@ function UserDetail({ selected, onSelect, selectedType }) {
 						<IoLocationOutline className="icon" />
 						<p className="location">{selected.location}</p>
 					</div>
+					<div className="blog">
+						<a href={selected.blog}>{selected.blog}</a>
+					</div>
+					<div className="endline"></div>
 				</div>
 				<div className="app__detail-data_attributes">
 					<div className="attributes__link">
 						<div className="repos link">
 							<RiGitRepositoryLine className="icon" />
 							<p>repositories</p>
-							<p>{selected.repositories}</p>
+							<p>{selected.public_repos}</p>
 						</div>
 						<div className="followers link">
 							<GoPeople />
 							<p>followers</p>
-							<p>{selected.repositories}</p>
+							<p>{selected.followers}</p>
 						</div>
 						<div className="following link">
 							<SlUserFollowing className="icon" />
 							<p>following</p>
-							<p>{selected.repositories}</p>
+							<p>{selected.following}</p>
 						</div>
 						<div className="starred link">
 							<FaRegStar className="icon" />
