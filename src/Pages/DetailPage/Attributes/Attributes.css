@@ -10,3 +10,56 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+
+/* repos */
+
+.user__repos {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+
+.repo {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+
+	background: linear-gradient(
+		to left,
+		rgba(0, 17, 31, 1),
+		rgba(8, 57, 99, 1),
+		rgba(7, 20, 32, 1)
+	);
+	padding: 0.5rem 1rem;
+
+	width: 480px;
+	height: 100px;
+	overflow-y: auto;
+}
+
+.repo .name {
+	color: rgba(85, 101, 232, 1);
+}
+
+.description {
+	color: var(--color-light1);
+}
+
+.repo a {
+	text-decoration: none;
+	color: var(--color-light2);
+}
+
+.repo .half {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+}
+
+.repo .stars {
+	display: flex;
+	align-items: center;
+	gap: 0.3rem;
+}
