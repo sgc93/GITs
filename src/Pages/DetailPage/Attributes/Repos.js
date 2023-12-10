@@ -23,28 +23,37 @@ function Repo({ repo }) {
 
 function Repos({ user }) {
 	const [repos, setRepos] = useState([]);
+	const [page, setPage] = useState(1);
+
 	useEffect(
 		function () {
 			async function fetchUserRepos() {
 				const response = await fetch(
-					`https://api.github.com/users/${user.login}/repos`
+					`https://api.github.com/users/${user.login}/repos?page=${page}&per_page=10`
 				);
 				const data = await response.json();
-				setRepos((repos) => data);
-				console.log(data);
+				setRepos((repos) => [...repos, ...data]);
 			}
 
 			fetchUserRepos();
 		},
-		[user]
+		[user.login, page]
 	);
+
+	function handleSeeMore() {
+		setPage((page) => page + 1);
+	}
+
 	return (
 		repos && (
-			<div className="user__repos">
-				{repos.map((repo) => (
-					<Repo repo={repo} />
-				))}
-			</div>
+			<>
+				<div className="user__repos">
+					{repos.map((repo) => (
+						<Repo key={repo.id} repo={repo} />
+					))}
+				</div>
+				<button onClick={() => handleSeeMore()}>See More</button>
+			</>
 		)
 	);
 }
