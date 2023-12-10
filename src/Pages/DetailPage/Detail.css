@@ -1,4 +1,6 @@
 .app__detail {
+	position: relative;
+	top: 0;
 	height: 100vh;
 	width: 100vw;
 
@@ -39,8 +41,8 @@
 	color: var(--color-text);
 	padding: 1.5rem 5rem;
 	display: flex;
-	align-items: center;
 	width: 100%;
+	height: 90%;
 }
 
 .app__detail-data_user {
@@ -120,6 +122,8 @@
 .app__detail-data_attributes {
 	align-self: flex-start;
 	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 
 	padding: 2rem 4rem;
 }
@@ -156,4 +160,13 @@
 
 .link:hover::before {
 	transform: scale(1);
+}
+
+.selected::before {
+	transform: scale(1);
+}
+
+.attribute__data {
+	height: 580px;
+	overflow-y: auto;
 }
