@@ -104,3 +104,17 @@ img {
 	text-decoration: none;
 	color: var(--color-light2);
 }
+
+/* stared repos */
+
+.owner {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.owner img {
+	width: 40px;
+	border: 0.5px solid var(--color-light1);
+	border-radius: 50%;
+}
