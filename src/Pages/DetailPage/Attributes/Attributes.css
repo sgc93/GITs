@@ -13,7 +13,8 @@ img {
 
 /* repos */
 
-.user__repos {
+.user__repos,
+.user__followers {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 2rem;
@@ -62,4 +63,44 @@ img {
 	display: flex;
 	align-items: center;
 	gap: 0.3rem;
+}
+
+/* followers & following */
+
+.follower-card {
+	width: 300px;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+
+	background: linear-gradient(
+		to left,
+		rgba(0, 17, 31, 1),
+		rgba(8, 57, 99, 1),
+		rgba(7, 20, 32, 1)
+	);
+	border: 1px solid var(--color-light1);
+	border-radius: 12px;
+	padding: 0.5rem;
+}
+
+.follower-card img {
+	height: 70px;
+	width: 70px;
+
+	border-radius: 50%;
+	border: 1px solid var(--color-light1);
+}
+
+.follower-data {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.follower-data a {
+	align-self: flex-end;
+	text-decoration: none;
+	color: var(--color-light2);
 }
