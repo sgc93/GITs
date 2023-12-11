@@ -1,37 +1,68 @@
 import React, { useEffect, useState } from "react";
+import { FaBriefcase, FaRegCalendarAlt } from "react-icons/fa";
+import { MdContactMail } from "react-icons/md";
+import { RxUpdate } from "react-icons/rx";
+
 import "./Attributes.css";
-const ReadMe = ({ username }) => {
+
+const ReadMe = ({ user }) => {
 	const [readmeContent, setReadmeContent] = useState("");
 	useEffect(
 		function () {
 			async function fetchUserProfileReadme() {
 				const response = await fetch(
-					`https://api.github.com/repos/${username}/${username}/contents/README.md`,
+					`https://api.github.com/repos/${user.login}/${user.login}/contents/README.md`,
 					{
 						headers: {
-							Authorization: `Bearer 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`,
+							Authorization: `Bearer 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`,
 						},
 					}
 				);
 
+				const data = await response.json();
 				if (response.ok) {
-					const data = await response.json();
 					setReadmeContent((readmeContent) => atob(data.content)); // Decode base64-encoded content
-				} else {
-					throw new Error(
-						`Failed to fetch profile README content: ${response.statusText}`
-					);
+				} else if (data.message === "Not Found") {
+					setReadmeContent("");
 				}
 			}
 
 			fetchUserProfileReadme();
 		},
-		[username]
+		[user]
 	);
 
-	return (
+	return readmeContent ? (
 		<div className="readme-container">
 			<div dangerouslySetInnerHTML={{ __html: readmeContent }} />
+		</div>
+	) : (
+		<div className="overview-sample">
+			<img src={user.avatar_url} alt={user.login} />
+			<div className="overview-overlay">
+				<div className="overview-data data1">
+					<div className="data11">
+						<FaRegCalendarAlt />
+						<p>created_at : {user.created_at}</p>
+					</div>
+					<div className="data11">
+						<RxUpdate />
+						<p>Last_update : {user.updated_at} </p>
+					</div>
+					<div className="data11">
+						<FaBriefcase />
+						<p>{user.hireable ? "Hireable" : "Not Hireable"}</p>
+					</div>
+					<div className="data11">
+						<MdContactMail />
+						<div className="data22">
+							{user.email && <p>{user.email}</p>}
+							{user.twitter_username && <p>{user.twitter_username}</p>}
+							<p>{user.blog}</p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };
@@ -39,7 +70,7 @@ const ReadMe = ({ username }) => {
 function Overview({ user }) {
 	return (
 		<div className="user__overview">
-			<ReadMe username={user.login} />
+			<ReadMe user={user} />
 		</div>
 	);
 }
