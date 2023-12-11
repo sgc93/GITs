@@ -36,7 +36,6 @@ function Stars({ user }) {
 				);
 				const data = await response.json();
 				setRepos((repos) => data);
-				console.log(data);
 			}
 
 			fetchStarredRepos();
