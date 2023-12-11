@@ -6,9 +6,54 @@
 	line-height: 1.6;
 }
 
-img {
+.readme-container img {
 	max-width: 100%;
 	height: auto;
+}
+
+.overview-sample {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 500px;
+}
+
+.overview-sample img {
+	position: absolute;
+	top: 0;
+	filter: blur(12px) opacity(0.4);
+
+	height: 100%;
+	width: 100%;
+}
+
+.overview-overlay {
+	position: absolute;
+	top: 50%;
+	left: 40%;
+	z-index: 200;
+
+	display: flex;
+	gap: 2rem;
+}
+
+.overview-data {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.data11 {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.data22 {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 }
 
 /* repos */
