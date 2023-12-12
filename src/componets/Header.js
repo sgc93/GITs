@@ -1,4 +1,5 @@
 import logo from "../assets/gits.png";
+import "./Component.css";
 
 function Logo() {
 	return (
