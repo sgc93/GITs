@@ -1,3 +1,72 @@
+/* header */
+
+.app__home-overlay_header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width: 100%;
+	height: 50px;
+	padding: 2rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	margin-top: 1rem;
+	width: 30px;
+}
+
+.logo img {
+	width: 100%;
+}
+
+.nav {
+	display: flex;
+}
+
+.nav a,
+.like {
+	color: var(--color-text);
+	font-weight: 600;
+	text-decoration: none;
+	margin-left: 2rem;
+	padding: 1.3rem 0;
+	position: relative;
+}
+
+.like::before {
+	background-color: rgb(255, 0, 43);
+}
+
+.nav a::before {
+	background-color: var(--color-orange);
+}
+
+.nav a::before,
+.like::before {
+	content: "";
+	position: absolute;
+	top: 80%;
+	left: 0;
+	width: 100%;
+	height: 8%;
+
+	z-index: 1;
+
+	transition: transform 1s;
+	transform-origin: 0 0;
+	transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+	transform: scale(0);
+}
+
+.nav a:hover::before,
+.like:hover::before {
+	transform: scale(1);
+}
+
 /* search bar */
 
 .app__searchbar {
