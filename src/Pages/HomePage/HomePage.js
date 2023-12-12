@@ -1,6 +1,7 @@
 import bg from "../../assets/earth.png";
 import moon from "../../assets/moon.png";
 import "./HomePage.css";
+import TopUser from "./Users/TopUser";
 
 function Body() {
 	return (
@@ -27,6 +28,7 @@ function HomePage() {
 			</div>
 			<div className="app__home-overlay">
 				<Body />
+				<TopUser />
 			</div>
 		</div>
 	);
