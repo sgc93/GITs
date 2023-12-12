@@ -63,7 +63,7 @@
 	gap: 2rem;
 
 	height: 600px;
-	width: max-content;
+	width: 700px;
 	overflow-y: auto;
 	overflow-x: hidden;
 }
