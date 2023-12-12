@@ -35,7 +35,7 @@ function User({ user, rank }) {
 			</p>
 			<div className="list-data">
 				<img src={user.avatar_url} alt="user" />
-				<div>
+				<div className="names">
 					<p className="name">{user.login}</p>
 					<p className="bio">{userData.bio}</p>
 				</div>
@@ -68,7 +68,6 @@ function TopUser() {
 	return (
 		<div className="app__top">
 			<div className="app__top-head">
-				<div className="app__top-head_spacer"></div>
 				<p className="">
 					top <span>100</span> users
 				</p>
