@@ -88,9 +88,6 @@ function TopUser() {
 					))}
 				</div>
 			</div>
-			<div className="app__top-btn">
-				<button>See All</button>
-			</div>
 		</div>
 	);
 }
