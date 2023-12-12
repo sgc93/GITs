@@ -19,12 +19,12 @@ function SearchBar({ query, setQuery, selected }) {
 		return document.addEventListener("keydown", onKeydown);
 	}, []);
 
-	if (query) {
-		window.scrollTo({
-			top: 1080,
-			behavior: "smooth",
-		});
-	}
+	// if (query) {
+	// 	window.scrollTo({
+	// 		top: 1080,
+	// 		behavior: "smooth",
+	// 	});
+	// }
 
 	return (
 		!selected && (
