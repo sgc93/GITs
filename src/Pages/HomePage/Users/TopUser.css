@@ -51,4 +51,28 @@
 
 .app__top-main {
 	display: flex;
+	gap: 2rem;
+}
+
+/* button */
+
+.app__top-btn {
+	align-self: flex-end;
+	display: flex;
+	align-items: center;
+}
+
+.app__top-btn button {
+	background-color: rgba(254, 254, 254, 0.24);
+	border: 1px solid white;
+	border-radius: 8px;
+	padding: 0.5rem 2rem;
+	color: rgba(255, 255, 255, 0.622);
+	font-weight: 500;
+	font-size: 1rem;
+}
+
+.app__top-btn button:hover {
+	cursor: pointer;
+	color: white;
 }
