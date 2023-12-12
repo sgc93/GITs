@@ -2,15 +2,23 @@ import { useEffect, useState } from "react";
 import indicator from "../../../assets/user_indicator.png";
 import "./TopUser.css";
 
-function User({ user }) {
+function User({ user, rank }) {
 	return (
 		<div className="top">
-			<div className="list-rank">1</div>
+			<p className="list-rank">
+				{rank === 0
+					? `${rank + 1}st`
+					: rank === 1
+					? `${rank + 1}nd`
+					: rank === 2
+					? `${rank + 1}rd`
+					: `${rank + 1}th`}
+			</p>
 			<div className="list-data">
 				<img src={indicator} alt="user" />
 				<div>
 					<p className="name">Indicator</p>
-					<p className="bio">asdf ;lkh asdf ;l;kja sdfsd; ;lkj</p>
+					<p className="bio">asdg jfjsdljf jdfls djfsld djflsd</p>
 				</div>
 				<div className="repos">
 					<a href="jdl">*</a>
@@ -31,7 +39,7 @@ function TopUser() {
 			);
 			const parsedData = await response.json();
 			setTopUsers((topUsers) => parsedData.items);
-			console.log(parsedData.items);
+			console.log(topUsers);
 		}
 
 		fetchTopUsers();
@@ -56,8 +64,8 @@ function TopUser() {
 					<img src={indicator} alt="repos" />
 				</div>
 				<div className="app__top-main_list">
-					{topUsers.map((user) => (
-						<User user={user} />
+					{topUsers.map((user, index) => (
+						<User user={user} rank={index} />
 					))}
 				</div>
 			</div>
