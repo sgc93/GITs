@@ -27,24 +27,26 @@ function SearchBar({ query, setQuery, selected }) {
 	}
 
 	return (
-		<div
-			className={
-				query && !selected
-					? "app__searchbar-focused app__searchbar"
-					: "app__searchbar app__searchbar-normal"
-			}
-		>
-			<input
-				type="text"
-				placeholder="Search or jump to ..."
-				ref={inputRef}
-				value={query}
-				onChange={(e) => setQuery((query) => e.target.value)}
-			/>
-			<button type="button">
-				<img src={search} alt="search" />
-			</button>
-		</div>
+		!selected && (
+			<div
+				className={
+					query && !selected
+						? "app__searchbar-focused app__searchbar"
+						: "app__searchbar app__searchbar-normal"
+				}
+			>
+				<input
+					type="text"
+					placeholder="Search or jump to ..."
+					ref={inputRef}
+					value={query}
+					onChange={(e) => setQuery((query) => e.target.value)}
+				/>
+				<button type="button">
+					<img src={search} alt="search" />
+				</button>
+			</div>
+		)
 	);
 }
 
