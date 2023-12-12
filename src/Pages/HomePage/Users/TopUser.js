@@ -1,8 +1,27 @@
 import { useEffect, useState } from "react";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import indicator from "../../../assets/user_indicator.png";
 import "./TopUser.css";
 
 function User({ user, rank }) {
+	const [userData, setUserData] = useState("");
+	useEffect(
+		function () {
+			async function fetchUserData() {
+				const response = await fetch(user.url, {
+					headers: {
+						Authorization: `Bearer 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`,
+					},
+				});
+				const data = await response.json();
+				setUserData((userData) => data);
+			}
+
+			fetchUserData();
+		},
+		[user]
+	);
+
 	return (
 		<div className="top">
 			<p className="list-rank">
@@ -15,14 +34,16 @@ function User({ user, rank }) {
 					: `${rank + 1}th`}
 			</p>
 			<div className="list-data">
-				<img src={indicator} alt="user" />
+				<img src={user.avatar_url} alt="user" />
 				<div>
-					<p className="name">Indicator</p>
-					<p className="bio">asdg jfjsdljf jdfls djfsld djflsd</p>
+					<p className="name">{user.login}</p>
+					<p className="bio">{userData.bio}</p>
 				</div>
 				<div className="repos">
-					<a href="jdl">*</a>
-					<p>1234 repositories</p>
+					<a href={user.html_url}>
+						<FaExternalLinkAlt />
+					</a>
+					<p>{userData.public_repos} repositories</p>
 				</div>
 			</div>
 		</div>
@@ -39,7 +60,6 @@ function TopUser() {
 			);
 			const parsedData = await response.json();
 			setTopUsers((topUsers) => parsedData.items);
-			console.log(topUsers);
 		}
 
 		fetchTopUsers();
