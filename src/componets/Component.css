@@ -1,7 +1,7 @@
 /* header */
 
 .app__home-overlay_header {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 999;
@@ -12,6 +12,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	backdrop-filter: blur(20px);
 }
 
 .logo {
@@ -79,7 +80,7 @@
 	padding: 0.3rem;
 	border-radius: 0.7rem;
 
-	z-index: 999;
+	z-index: 555;
 }
 
 .app__searchbar-focused {
@@ -142,7 +143,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	backdrop-filter: blur(10px);
+	backdrop-filter: blur(15px);
 }
 .footer-address,
 .footer-git {
