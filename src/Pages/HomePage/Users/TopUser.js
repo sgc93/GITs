@@ -37,7 +37,7 @@ function User({ user, rank }) {
 				<img src={user.avatar_url} alt="user" />
 				<div className="names">
 					<p className="name">{user.login}</p>
-					<p className="bio">{userData.bio}</p>
+					<p className="bio">{userData.followers} followers</p>
 				</div>
 				<div className="repos">
 					<a href={user.html_url}>
