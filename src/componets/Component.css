@@ -14,7 +14,7 @@
 }
 
 .app__searchbar-focused {
-	top: 115vh;
+	top: 10vh;
 	left: 50%;
 	transform: translateX(-50%);
 }
