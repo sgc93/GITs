@@ -2,7 +2,7 @@ import bg from "../../assets/earth.png";
 import moon from "../../assets/moon.png";
 import "./HomePage.css";
 
-function Body({ onFocus, inputRef }) {
+function Body() {
 	return (
 		<div className="app__home-overlay_body">
 			<div className="body__content">
@@ -19,14 +19,14 @@ function Body({ onFocus, inputRef }) {
 	);
 }
 
-function HomePage({ onFocus, inputRef }) {
+function HomePage() {
 	return (
 		<div className="app__home">
 			<div className="app__home-bg">
 				<img src={bg} alt="gitEarth" />
 			</div>
 			<div className="app__home-overlay">
-				<Body onFocus={onFocus} inputRef={inputRef} />
+				<Body />
 			</div>
 		</div>
 	);
