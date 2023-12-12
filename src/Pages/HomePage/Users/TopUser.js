@@ -80,7 +80,7 @@ function TopUser() {
 	);
 
 	return (
-		<div className="app__top">
+		<div className="app__top" id="topUsers">
 			<div className="app__top-head">
 				<p className="">
 					top <span>100</span> users
