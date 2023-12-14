@@ -1,9 +1,9 @@
 .app__top {
 	align-self: flex-start;
-	padding: 30vh 3rem 5rem;
+	padding: 0rem 5rem;
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
+	gap: 5rem;
 }
 
 /* head */
