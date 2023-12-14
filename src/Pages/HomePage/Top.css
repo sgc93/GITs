@@ -70,7 +70,6 @@
 .top {
 	display: flex;
 	align-items: center;
-	justify-content: center;
 	gap: 2rem;
 }
 
@@ -102,6 +101,8 @@
 	gap: 1rem;
 	padding: 0.5rem 1rem;
 
+	min-width: 500px;
+
 	border-radius: 15px;
 	border: 1px solid #1e2d3d;
 
@@ -120,7 +121,7 @@
 }
 
 .forks {
-	width: 140px;
+	min-width: 140px;
 }
 
 .forks div {
@@ -144,6 +145,7 @@
 	border-radius: 12px;
 
 	padding: 0.1rem 0.5rem;
+	color: var(--color-green);
 }
 
 .name {
