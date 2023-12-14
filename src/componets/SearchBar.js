@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import search from "../assets/search.svg";
+import { MdClose } from "react-icons/md";
 import "./Component.css";
 
 function SearchBar({ query, setQuery, selected }) {
@@ -42,9 +42,11 @@ function SearchBar({ query, setQuery, selected }) {
 					value={query}
 					onChange={(e) => setQuery((query) => e.target.value)}
 				/>
-				<button type="button">
-					<img src={search} alt="search" />
-				</button>
+				{query && (
+					<button type="button" onClick={() => setQuery((query) => "")}>
+						<MdClose className="close-icon" />
+					</button>
+				)}
 			</div>
 		)
 	);
