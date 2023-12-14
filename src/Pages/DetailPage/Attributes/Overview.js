@@ -11,7 +11,12 @@ const ReadMe = ({ user }) => {
 		function () {
 			async function fetchUserProfileReadme() {
 				const response = await fetch(
-					`https://api.github.com/repos/${user.login}/${user.login}/contents/README.md`
+					`https://api.github.com/repos/${user.login}/${user.login}/contents/README.md`,
+					{
+						headers: {
+							Authorization: `Bearer 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`,
+						},
+					}
 				);
 
 				const data = await response.json();
