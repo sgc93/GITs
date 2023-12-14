@@ -18,7 +18,8 @@ body {
 }
 
 .overflow {
-	overflow: auto;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 .overflow::-webkit-scrollbar {
