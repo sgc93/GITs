@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { GoPeople } from "react-icons/go";
 import { RiGitRepositoryLine } from "react-icons/ri";
+import { useFetchUserData } from "../../../Hooks/useFetchUserData";
 
 import indicator from "../../../assets/user_indicator.png";
 import "../Top.css";
@@ -27,14 +28,7 @@ function User({ user, rank, onSelect }) {
 		[user]
 	);
 
-	useEffect(() => {
-		async function fetchXuserData() {
-			const res = await fetch(xuser.url);
-			const data = await res.json();
-			onSelect(data, "user");
-		}
-		fetchXuserData();
-	}, [xuser]);
+	useFetchUserData(xuser, onSelect);
 
 	return (
 		<div className="top" onClick={() => setXuser(user)}>
