@@ -107,6 +107,7 @@
 	border: 1px solid #1e2d3d;
 
 	background: linear-gradient(90deg, #00111f 0%, #083963 48.33%, #071420 100%);
+	cursor: pointer;
 }
 
 .names,
