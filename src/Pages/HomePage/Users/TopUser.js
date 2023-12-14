@@ -47,9 +47,13 @@ function User({ user, rank }) {
 				</div>
 
 				<div className="forks">
-					<a href={user.html_url}>
-						<FaExternalLinkAlt />
-					</a>
+					<div>
+						<p>{user.type}</p>
+						<a href={user.html_url}>
+							<FaExternalLinkAlt />
+						</a>
+					</div>
+
 					<p>
 						<RiGitRepositoryLine />
 						{userData.public_repos} repos
