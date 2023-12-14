@@ -8,6 +8,8 @@ import "../Top.css";
 
 function User({ user, rank, onSelect }) {
 	const [userData, setUserData] = useState("");
+	const [xuser, setXuser] = useState("");
+
 	useEffect(
 		function () {
 			async function fetchUserData() {
@@ -25,8 +27,17 @@ function User({ user, rank, onSelect }) {
 		[user]
 	);
 
+	useEffect(() => {
+		async function fetchXuserData() {
+			const res = await fetch(xuser.url);
+			const data = await res.json();
+			onSelect(data, "user");
+		}
+		fetchXuserData();
+	}, [xuser]);
+
 	return (
-		<div className="top" onClick={() => onSelect(user, "user")}>
+		<div className="top" onClick={() => setXuser(user)}>
 			<p className="list-rank">
 				{rank === 0
 					? `${rank + 1}st`
