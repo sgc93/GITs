@@ -32,7 +32,7 @@ const UserProfileCard = ({ user, onSelect, type }) => {
 				<div className="profile__avatar">
 					<img src={user.avatar_url} alt="avatar" />
 				</div>
-				<div className="profile__name">
+				<div className="profile__name overflow overflow-small">
 					<p className="name">{user.login}</p>
 					<p className={userData.bio ? "bio" : "no__bio"}>
 						{userData.bio ? userData.bio : '"user has no bio yet!",GITs'}
