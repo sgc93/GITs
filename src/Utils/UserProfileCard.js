@@ -11,7 +11,11 @@ const UserProfileCard = ({ user, onSelect, type }) => {
 	useEffect(
 		function () {
 			async function fetchUserData() {
-				const response = await fetch(user.url);
+				const response = await fetch(user.url, {
+					headers: {
+						Authorization: `Bearer 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`,
+					},
+				});
 				const data = await response.json();
 				console.log(data);
 				setUserData(data);
