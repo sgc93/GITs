@@ -1,6 +1,6 @@
 .app__top {
 	align-self: flex-start;
-	padding: 0rem 5rem;
+	padding: 2rem 5rem;
 	display: flex;
 	flex-direction: column;
 	gap: 5rem;
