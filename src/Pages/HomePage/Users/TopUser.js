@@ -106,11 +106,13 @@ function TopUser() {
 				<div className="app__top-main_icon">
 					<img src={indicator} alt="repos" />
 				</div>
-				<div className="app__top-main_list overflow overflow-large">
-					{topUsers.map((user, index) => (
-						<User user={user} rank={index} />
-					))}
-				</div>
+				{topUsers && (
+					<div className="app__top-main_list overflow overflow-large">
+						{topUsers.map((user, index) => (
+							<User user={user} rank={index} />
+						))}
+					</div>
+				)}
 			</div>
 		</div>
 	);
