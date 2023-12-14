@@ -80,8 +80,9 @@
 	background-color: var(--color-bg-black);
 
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
-	padding: 0.3rem;
+	padding: 0.5rem;
 	border-radius: 0.7rem;
 
 	z-index: 555;
@@ -118,20 +119,23 @@
 }
 
 .app__searchbar button {
-	background: none;
-	border: none;
+	display: flex;
+	background: var(--color-light1);
+	border: 1px solid var(--color-light2);
+	border-radius: 0.5rem;
 	cursor: pointer;
-
+	opacity: 0.6;
 	transition: 0.3s;
 }
 
 .app__searchbar button:hover {
+	opacity: 1;
 	transform: translateY(-2px);
 }
 
-.app__searchbar button img {
-	width: 1.6rem;
-	margin: 0.2rem;
+.app__searchbar .close-icon {
+	font-size: 1.6rem;
+	color: white;
 }
 
 /* Footer */
