@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { GoPeople } from "react-icons/go";
 import { RiGitRepositoryLine } from "react-icons/ri";
+import { useFetchUserData } from "../../../Hooks/useFetchUserData";
 import indicator from "../../../assets/org_indicator.png";
 import "../Top.css";
 
-function Org({ org, rank }) {
+function Org({ org, rank, onSelect }) {
 	const [orgData, setOrgData] = useState("");
+	const [xorg, setXorg] = useState("");
+
 	useEffect(
 		function () {
 			const controller = new AbortController();
@@ -34,8 +37,10 @@ function Org({ org, rank }) {
 		[org]
 	);
 
+	useFetchUserData(xorg, onSelect);
+
 	return (
-		<div className="top">
+		<div className="top" onClick={() => setXorg((xorg) => org)}>
 			<p className="list-rank">
 				{rank === 0
 					? `${rank + 1}st`
@@ -69,7 +74,7 @@ function Org({ org, rank }) {
 	);
 }
 
-function TopOrg() {
+function TopOrg({ onSelect }) {
 	const [topOrgs, setTopOrgs] = useState([]);
 	useEffect(function () {
 		async function fetchTopOrgs() {
@@ -101,7 +106,7 @@ function TopOrg() {
 				{topOrgs && (
 					<div className="app__top-main_list overflow overflow-large">
 						{topOrgs.map((org, index) => (
-							<Org key={org.id} org={org} rank={index} />
+							<Org key={org.id} org={org} rank={index} onSelect={onSelect} />
 						))}
 					</div>
 				)}
