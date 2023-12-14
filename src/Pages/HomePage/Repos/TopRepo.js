@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaCode, FaExternalLinkAlt } from "react-icons/fa";
 import { GoStar } from "react-icons/go";
 import { PiGitFork } from "react-icons/pi";
 import indicator from "../../../assets/repo_indicator.png";
@@ -56,7 +56,16 @@ function Repo({ repo, rank }) {
 
 				<div className="forks">
 					<div>
-						<p>{repo.visibility}</p>
+						<p>
+							{repo.language ? (
+								<>
+									<FaCode />
+									<span>{repo.language}</span>
+								</>
+							) : (
+								repo.visibility
+							)}
+						</p>
 						<a href={repo.html_url}>
 							<FaExternalLinkAlt />
 						</a>
@@ -97,7 +106,6 @@ function TopRepo() {
 				const response = await fetch(url);
 				const parsedData = await response.json();
 				setTopRepos((topRepos) => parsedData.items);
-				console.log(parsedData);
 			}
 
 			fetchTopUsers();
