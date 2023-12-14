@@ -100,7 +100,7 @@ function UserDetail({ selected, onSelect, selectedType }) {
 							<p>{selected.repositories}</p>
 						</div>
 					</div>
-					<div className="attribute__data">
+					<div className="attribute__data overflow overflow-large">
 						{attIndex === 0 ? (
 							<Overview user={selected} />
 						) : attIndex === 1 ? (
