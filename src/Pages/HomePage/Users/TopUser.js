@@ -6,7 +6,7 @@ import { RiGitRepositoryLine } from "react-icons/ri";
 import indicator from "../../../assets/user_indicator.png";
 import "../Top.css";
 
-function User({ user, rank }) {
+function User({ user, rank, onSelect }) {
 	const [userData, setUserData] = useState("");
 	useEffect(
 		function () {
@@ -26,7 +26,7 @@ function User({ user, rank }) {
 	);
 
 	return (
-		<div className="top">
+		<div className="top" onClick={() => onSelect(user, "user")}>
 			<p className="list-rank">
 				{rank === 0
 					? `${rank + 1}st`
@@ -64,7 +64,7 @@ function User({ user, rank }) {
 	);
 }
 
-function TopUser() {
+function TopUser({ onSelect }) {
 	const [topUsers, setTopUsers] = useState([]);
 	const [filter, setFilter] = useState("by number of repositories");
 	const [url, setUrl] = useState("repos:%3E0&sort=repositories");
@@ -109,7 +109,7 @@ function TopUser() {
 				{topUsers && (
 					<div className="app__top-main_list overflow overflow-large">
 						{topUsers.map((user, index) => (
-							<User user={user} rank={index} />
+							<User user={user} rank={index} onSelect={onSelect} />
 						))}
 					</div>
 				)}
