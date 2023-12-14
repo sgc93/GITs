@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { GoPeople } from "react-icons/go";
+import { RiGitRepositoryLine } from "react-icons/ri";
+
 import indicator from "../../../assets/user_indicator.png";
-import "./TopUser.css";
+import "../Top.css";
 
 function User({ user, rank }) {
 	const [userData, setUserData] = useState("");
@@ -10,7 +13,7 @@ function User({ user, rank }) {
 			async function fetchUserData() {
 				const response = await fetch(user.url, {
 					headers: {
-						Authorization: `Bearer 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`,
+						Authorization: `Bearer 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`,
 					},
 				});
 				const data = await response.json();
@@ -37,14 +40,20 @@ function User({ user, rank }) {
 				<img src={user.avatar_url} alt="user" />
 				<div className="names">
 					<p className="name">{user.login}</p>
-					<p className="bio">{userData.followers} followers</p>
+					<p className="bio">
+						<GoPeople />
+						{userData.followers} followers
+					</p>
 				</div>
 
-				<div className="repos">
+				<div className="forks">
 					<a href={user.html_url}>
 						<FaExternalLinkAlt />
 					</a>
-					<p>{userData.public_repos} repositories</p>
+					<p>
+						<RiGitRepositoryLine />
+						{userData.public_repos} repos
+					</p>
 				</div>
 			</div>
 		</div>
