@@ -1,6 +1,7 @@
 import bg from "../../assets/earth.png";
 import moon from "../../assets/moon.png";
 import "./HomePage.css";
+import TopOrg from "./Orgs/TopOrg";
 import TopRepo from "./Repos/TopRepo";
 import TopUser from "./Users/TopUser";
 
@@ -31,6 +32,7 @@ function HomePage() {
 				<Body />
 				<TopUser />
 				<TopRepo />
+				<TopOrg />
 			</div>
 		</div>
 	);
