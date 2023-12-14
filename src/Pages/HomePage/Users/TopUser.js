@@ -84,7 +84,6 @@ function TopUser() {
 				);
 				const parsedData = await response.json();
 				setTopUsers((topUsers) => parsedData.items);
-				console.log(response);
 			}
 
 			fetchTopUsers();

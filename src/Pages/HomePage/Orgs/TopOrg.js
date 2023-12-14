@@ -19,7 +19,6 @@ function Org({ org, rank }) {
 						signal: controller.signal,
 					});
 					const data = await response.json();
-					console.log(data);
 					setOrgData((orgData) => data);
 				} catch (error) {
 					console.log(error.message);
@@ -79,7 +78,6 @@ function TopOrg() {
 			);
 			const parsedData = await response.json();
 			setTopOrgs((topOrgs) => parsedData.items);
-			console.log(parsedData);
 		}
 
 		fetchTopOrgs();
