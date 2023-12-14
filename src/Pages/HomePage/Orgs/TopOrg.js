@@ -100,7 +100,7 @@ function TopOrg() {
 				<div className="app__top-main_icon">
 					<img src={indicator} alt="orgs" />
 				</div>
-				<div className="app__top-main_list">
+				<div className="app__top-main_list overflow overflow-large">
 					{topOrgs.map((org, index) => (
 						<Org key={org.id} org={org} rank={index} />
 					))}
