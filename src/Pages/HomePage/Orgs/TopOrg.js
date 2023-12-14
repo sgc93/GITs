@@ -72,37 +72,18 @@ function Org({ org, rank }) {
 
 function TopOrg() {
 	const [topOrgs, setTopOrgs] = useState([]);
-	const [filter, setFilter] = useState("by number of stars");
-	const [url, setUrl] = useState(
-		"https://api.github.com/search/users?q=type:org&sort=repositories&order=desc&per_page=100"
-	);
-	useEffect(() => {
-		if (filter === "by number of stars") {
-			setUrl(
-				(url) =>
-					"https://api.github.com/search/users?q=type:org&sort=repositories&order=desc&per_page=100"
+	useEffect(function () {
+		async function fetchTopOrgs() {
+			const response = await fetch(
+				"https://api.github.com/search/users?q=type:org&sort=repositories&order=desc&per_page=100"
 			);
-		} else if (filter === "by number of forks") {
-			setUrl(
-				(url) =>
-					"https://api.github.com/search/repositories?q=forks:%3E0&sort=forks&order=desc&per_page=100"
-			);
+			const parsedData = await response.json();
+			setTopOrgs((topOrgs) => parsedData.items);
+			console.log(parsedData);
 		}
-	}, [filter]);
 
-	useEffect(
-		function () {
-			async function fetchTopOrgs() {
-				const response = await fetch(url);
-				const parsedData = await response.json();
-				setTopOrgs((topOrgs) => parsedData.items);
-				console.log(parsedData);
-			}
-
-			fetchTopOrgs();
-		},
-		[url]
-	);
+		fetchTopOrgs();
+	}, []);
 
 	return (
 		<div className="app__top" id="topOrgs">
@@ -110,9 +91,9 @@ function TopOrg() {
 				<p className="">
 					top <span>100</span> Organizations
 				</p>
-				<select value={filter} onChange={(e) => setFilter(e.target.value)}>
+				<select>
 					<option>by number of repositories</option>
-					<option>by number of forks</option>
+					<option>😔 only by repo</option>
 				</select>
 			</div>
 			<div className="app__top-main">
