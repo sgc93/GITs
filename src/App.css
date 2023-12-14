@@ -16,3 +16,28 @@ body {
 	--color-line1: #1e2d3d;
 	--color-green: #2ea043;
 }
+
+.overflow {
+	overflow: auto;
+}
+
+.overflow::-webkit-scrollbar {
+	background-color: transparent;
+}
+
+.overflow::-webkit-scrollbar-thumb {
+	background: #5566e851;
+	border-radius: 12px;
+}
+
+.overflow::-webkit-scrollbar-thumb:hover {
+	background: #5566e8b5;
+}
+
+.overflow-small::-webkit-scrollbar {
+	width: 6px;
+}
+
+.overflow-large::-webkit-scrollbar {
+	width: 12px;
+}
