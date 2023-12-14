@@ -32,7 +32,7 @@ function HomePage({ onSelect }) {
 				<Body />
 				<TopUser onSelect={onSelect} />
 				<TopRepo />
-				<TopOrg />
+				<TopOrg onSelect={onSelect} />
 			</div>
 		</div>
 	);
