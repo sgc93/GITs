@@ -24,7 +24,7 @@ function Body() {
 
 function HomePage() {
 	return (
-		<div className="app__home">
+		<div className="app__home" id="home">
 			<div className="app__home-bg">
 				<img src={bg} alt="gitEarth" />
 			</div>
