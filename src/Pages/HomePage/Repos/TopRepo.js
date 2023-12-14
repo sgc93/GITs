@@ -128,11 +128,13 @@ function TopRepo() {
 				<div className="app__top-main_icon">
 					<img src={indicator} alt="repos" />
 				</div>
-				<div className="app__top-main_list overflow overflow-large">
-					{topRepos.map((repo, index) => (
-						<Repo key={repo.id} repo={repo} rank={index} />
-					))}
-				</div>
+				{topRepos && (
+					<div className="app__top-main_list overflow overflow-large">
+						{topRepos.map((repo, index) => (
+							<Repo key={repo.id} repo={repo} rank={index} />
+						))}
+					</div>
+				)}
 			</div>
 		</div>
 	);
