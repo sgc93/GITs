@@ -1,7 +1,7 @@
 /* header */
 
 .app__home-overlay_header {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 999;
@@ -12,7 +12,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	backdrop-filter: blur(20px);
+	/* backdrop-filter: blur(20px); */
 }
 
 .logo {
