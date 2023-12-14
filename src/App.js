@@ -20,7 +20,7 @@ function App() {
 	return (
 		<>
 			{!selected && !query && <Header />}
-			{!selected && !query && <HomePage />}
+			{!selected && !query && <HomePage onSelect={onSelect} />}
 			<SearchBar query={query} setQuery={setQuery} selected={selected} />
 			{query && !selected && <Search query={query} onSelect={onSelect} />}
 

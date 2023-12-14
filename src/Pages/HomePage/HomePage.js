@@ -22,7 +22,7 @@ function Body() {
 	);
 }
 
-function HomePage() {
+function HomePage({ onSelect }) {
 	return (
 		<div className="app__home" id="home">
 			<div className="app__home-bg">
@@ -30,7 +30,7 @@ function HomePage() {
 			</div>
 			<div className="app__home-overlay">
 				<Body />
-				<TopUser />
+				<TopUser onSelect={onSelect} />
 				<TopRepo />
 				<TopOrg />
 			</div>
