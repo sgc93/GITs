@@ -9,7 +9,7 @@ function SearchBar({ query, setQuery, selected }) {
 		function onKeydown(e) {
 			if (document.activeElement === inputRef.input) return;
 			if (e.code === "Enter") {
-				inputRef.current.focus();
+				inputRef.current && inputRef.current.focus();
 				setQuery("");
 			}
 		}
