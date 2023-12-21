@@ -21,9 +21,6 @@ function Repo({ repo }) {
 	);
 }
 
-const URL =
-	"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";
-
 function Repos({ user }) {
 	const [repos, setRepos] = useState([]);
 	const [page, setPage] = useState(1);
