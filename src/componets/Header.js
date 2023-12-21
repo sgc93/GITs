@@ -1,4 +1,4 @@
-import logo from "../assets/gits.png";
+import logo from "../assets/logo.png";
 import "./Component.css";
 
 function Logo() {
@@ -12,7 +12,9 @@ function Logo() {
 function Nav() {
 	return (
 		<nav className="nav">
-			<a href="#home">_home</a>
+			<a href="#home" className="active">
+				_home
+			</a>
 			<a href="#topUsers">_topUsers</a>
 			<a href="#topRepos">_topRepositories</a>
 			<a href="#topOrgs">_topOrganizations</a>
