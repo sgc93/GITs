@@ -29,7 +29,12 @@ function Repos({ user }) {
 		function () {
 			async function fetchUserRepos() {
 				const response = await fetch(
-					`https://api.github.com/users/${user.login}/repos?page=${page}&per_page=40`
+					`https://api.github.com/users/${user.login}/repos?page=${page}&per_page=40`,
+					{
+						headers: {
+							Authorization: `Bearer ${process.env.GITS_GITHUB_PAT}`,
+						},
+					}
 				);
 				const data = await response.json();
 				setRepos((repos) => data);

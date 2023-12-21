@@ -23,7 +23,12 @@ function Followers({ user }) {
 		function () {
 			async function fetchFollowers() {
 				const response = await fetch(
-					`https://api.github.com/users/${user.login}/followers`
+					`https://api.github.com/users/${user.login}/followers`,
+					{
+						headers: {
+							Authorization: `Bearer ${process.env.GITS_GITHUB_PAT}`,
+						},
+					}
 				);
 				const data = await response.json();
 				setFollowers((followers) => data);

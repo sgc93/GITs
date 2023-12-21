@@ -32,7 +32,12 @@ function Stars({ user }) {
 		function () {
 			async function fetchStarredRepos() {
 				const response = await fetch(
-					`https://api.github.com/users/${user.login}/starred`
+					`https://api.github.com/users/${user.login}/starred`,
+					{
+						headers: {
+							Authorization: `Bearer ${process.env.GITS_GITHUB_PAT}`,
+						},
+					}
 				);
 				const data = await response.json();
 				setRepos((repos) => data);
