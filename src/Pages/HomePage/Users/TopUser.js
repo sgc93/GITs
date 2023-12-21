@@ -16,7 +16,7 @@ function User({ user, rank, onSelect }) {
 			async function fetchUserData() {
 				const response = await fetch(user.url, {
 					headers: {
-						Authorization: `Bearer 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`,
+						Authorization: `Bearer ${process.env.GITS_GITHUB_PAT}`,
 					},
 				});
 				const data = await response.json();
