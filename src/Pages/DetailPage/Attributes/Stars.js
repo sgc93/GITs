@@ -26,7 +26,7 @@ function Repo({ repo }) {
 
 function Stars({ user }) {
 	const [repos, setRepos] = useState([]);
-	const [page, setPage] = useState(1);
+	const [setPage] = useState(1);
 
 	useEffect(
 		function () {
