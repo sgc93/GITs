@@ -26,7 +26,7 @@ function Following({ user }) {
 					`https://api.github.com/users/${user.login}/following`,
 					{
 						headers: {
-							Authorization: `Bearer ${process.env.GITS_GITHUB_PAT}`,
+							Authorization: `Bearer ${process.env.REACT_APP_MY_TOKEN}`,
 						},
 					}
 				);

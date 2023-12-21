@@ -14,7 +14,7 @@ const ReadMe = ({ user }) => {
 					`https://api.github.com/repos/${user.login}/${user.login}/contents/README.md`,
 					{
 						headers: {
-							Authorization: `Bearer ${process.env.GITS_GITHUB_PAT}`,
+							Authorization: `Bearer ${process.env.REACT_APP_MY_TOKEN}`,
 						},
 					}
 				);

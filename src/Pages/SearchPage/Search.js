@@ -14,7 +14,7 @@ function Search({ query, onSelect }) {
 						`https://api.github.com/search/users?q=${query}`,
 						{
 							headers: {
-								Authorization: `Bearer ${process.env.GITS_GITHUB_PAT}`,
+								Authorization: `Bearer ${process.env.REACT_APP_MY_TOKEN}`,
 							},
 							signal: controller.signal,
 						}

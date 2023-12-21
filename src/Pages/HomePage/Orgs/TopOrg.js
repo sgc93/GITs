@@ -17,7 +17,7 @@ function Org({ org, rank, onSelect }) {
 				try {
 					const response = await fetch(org.url, {
 						headers: {
-							Authorization: `Bearer ${process.env.GITS_GITHUB_PAT}`,
+							Authorization: `Bearer ${process.env.REACT_APP_MY_TOKEN}`,
 						},
 						signal: controller.signal,
 					});

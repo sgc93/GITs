@@ -35,7 +35,7 @@ function Stars({ user }) {
 					`https://api.github.com/users/${user.login}/starred`,
 					{
 						headers: {
-							Authorization: `Bearer ${process.env.GITS_GITHUB_PAT}`,
+							Authorization: `Bearer ${process.env.REACT_APP_MY_TOKEN}`,
 						},
 					}
 				);

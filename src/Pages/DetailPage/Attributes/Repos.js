@@ -21,6 +21,9 @@ function Repo({ repo }) {
 	);
 }
 
+const URL =
+	"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";
+
 function Repos({ user }) {
 	const [repos, setRepos] = useState([]);
 	const [page, setPage] = useState(1);
@@ -32,7 +35,7 @@ function Repos({ user }) {
 					`https://api.github.com/users/${user.login}/repos?page=${page}&per_page=40`,
 					{
 						headers: {
-							Authorization: `Bearer ${process.env.GITS_GITHUB_PAT}`,
+							Authorization: `Bearer ${process.env.REACT_APP_MY_TOKEN}`,
 						},
 					}
 				);

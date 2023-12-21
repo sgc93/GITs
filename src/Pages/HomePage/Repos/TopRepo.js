@@ -14,7 +14,7 @@ function Repo({ repo, rank }) {
 				try {
 					const response = await fetch(repo.url, {
 						headers: {
-							Authorization: `Bearer ${process.env.GITS_GITHUB_PAT}`,
+							Authorization: `Bearer ${process.env.REACT_APP_MY_TOKEN}`,
 						},
 						signal: controller.signal,
 					});
