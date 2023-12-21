@@ -1,5 +1,6 @@
 import bg from "../../assets/earth.png";
 import moon from "../../assets/moon.png";
+import Contact from "../../componets/Contact";
 import "./HomePage.css";
 import TopOrg from "./Orgs/TopOrg";
 import TopRepo from "./Repos/TopRepo";
@@ -33,6 +34,7 @@ function HomePage({ onSelect }) {
 				<TopUser onSelect={onSelect} />
 				<TopRepo />
 				<TopOrg onSelect={onSelect} />
+				<Contact />
 			</div>
 		</div>
 	);
