@@ -5,19 +5,22 @@ import "./Component.css";
 function SearchBar({ query, setQuery, selected }) {
 	const inputRef = useRef(null);
 
-	useEffect(function () {
-		function onKeydown(e) {
-			if (document.activeElement === inputRef.input) return;
-			if (e.code === "Enter") {
-				inputRef.current && inputRef.current.focus();
-				setQuery("");
+	useEffect(
+		function () {
+			function onKeydown(e) {
+				if (document.activeElement === inputRef.input) return;
+				if (e.code === "Enter") {
+					inputRef.current && inputRef.current.focus();
+					setQuery("");
+				}
 			}
-		}
 
-		document.addEventListener("keydown", onKeydown);
+			document.addEventListener("keydown", onKeydown);
 
-		return document.addEventListener("keydown", onKeydown);
-	}, []);
+			return document.addEventListener("keydown", onKeydown);
+		},
+		[setQuery]
+	);
 
 	// if (query) {
 	// 	window.scrollTo({
