@@ -199,3 +199,52 @@
 	transform-origin: translateY(-2px);
 	color: var(--color-light2);
 }
+
+/* contact */
+
+.contact {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 8rem;
+}
+
+.copyright {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+
+	padding: 1rem;
+}
+
+.copyright span {
+	color: rgb(208, 208, 208);
+}
+
+.addresses {
+	display: flex;
+	align-items: center;
+	padding: 1rem 3rem;
+}
+
+.addresses ul {
+	display: flex;
+	align-items: center;
+
+	list-style: none;
+}
+
+.addresses ul li {
+	padding: 1rem;
+}
+
+.addresses ul li a {
+	text-decoration: none;
+	color: white;
+	transition: transform 0.5s;
+}
+
+.addresses ul li a:hover {
+	color: rgb(149, 149, 149);
+	transform: translateX(-2px);
+}
